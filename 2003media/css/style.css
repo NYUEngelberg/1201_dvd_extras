@@ -1,0 +1,353 @@
+/* =====================================================
+   2003 Internet Aesthetic — Engelberg Center palette
+
+   Brand colors from nyuengelberg.org:
+     Green:       #00854d / #00a862
+     Dark Blue:   #394fa1
+     Gold:        #eabf1e
+     Red-Orange:  #cf4827 / #dd5029
+     Sky Blue:    #20b6ea / #4cc5ee
+     Pink:        #ed76ad
+     Near-black:  #231f20
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1a12;
+  color: #d8ede2;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0 12px 40px;
+}
+
+#page-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+/* =====================================================
+   About link (? icon, top-right)
+   ===================================================== */
+
+.about-link {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 24px;
+  text-align: center;
+  background-color: #394fa1;
+  color: #ffffff;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 3px outset #6278c4;
+  cursor: pointer;
+}
+
+.about-link:hover {
+  background-color: #4d63c0;
+  color: #ffffff;
+}
+
+/* =====================================================
+   Header
+   ===================================================== */
+
+header {
+  text-align: center;
+  border-bottom: 2px solid #00854d;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(18px, 3.5vw, 28px);
+  color: #eabf1e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+  text-shadow: 2px 2px 0 #003d22;
+}
+
+.tagline {
+  color: #4cc5ee;
+  font-size: 13px;
+  margin: 0;
+  font-style: italic;
+}
+
+/* =====================================================
+   Slot Machine
+   ===================================================== */
+
+#slot-machine {
+  margin: 0 auto 16px;
+  max-width: 680px;
+}
+
+.reel-frame {
+  display: flex;
+  align-items: stretch;
+  background-color: #111c14;
+  border: 4px ridge #394fa1;
+  border-radius: 4px;
+  padding: 8px;
+  gap: 0;
+  min-height: 90px;
+}
+
+.reel {
+  flex: 1;
+  background-color: #060e08;
+  border: 2px inset #005c35;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+  padding: 8px 6px;
+}
+
+.reel-cell {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(16px, 3vw, 26px);
+  color: #d8ede2;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+}
+
+.reel-divider {
+  width: 8px;
+  background: linear-gradient(to bottom, #394fa1, #1e2d6e, #394fa1);
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   Result Display — visually hidden, screen-reader only
+   ===================================================== */
+
+#result-display {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =====================================================
+   Spin Button
+   ===================================================== */
+
+#button-row {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#spin-btn {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: clamp(18px, 3.5vw, 26px);
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffffff;
+  background-color: #cf4827;
+  border: 4px outset #e8724f;
+  padding: 12px 36px;
+  cursor: pointer;
+  text-transform: uppercase;
+  min-width: 260px;
+}
+
+#spin-btn:hover:not(:disabled) {
+  background-color: #dd5029;
+}
+
+#spin-btn:active:not(:disabled) {
+  border-style: inset;
+  background-color: #a33218;
+}
+
+#spin-btn:disabled {
+  background-color: #4a2215;
+  color: #8a6050;
+  border-color: #5c3020;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   YouTube Embed
+   ===================================================== */
+
+#video-area {
+  margin: 0 auto 16px;
+  max-width: 680px;
+  text-align: center;
+}
+
+#youtube-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 640px;
+  margin: 0 auto;
+  border: 3px ridge #394fa1;
+  display: block;
+}
+
+#no-video-msg {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 20px;
+  color: #ed76ad;
+  text-align: center;
+  padding: 24px;
+  border: 3px dashed #8b3d5a;
+  background-color: #160810;
+  margin: 0;
+}
+
+/* =====================================================
+   PDF Link Button
+   ===================================================== */
+
+#pdf-row {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pdf-button {
+  display: inline-block;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #394fa1;
+  border: 3px outset #6278c4;
+  padding: 8px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pdf-button:hover {
+  background-color: #4d63c0;
+  color: #ffffff;
+}
+
+.pdf-button:active {
+  border-style: inset;
+}
+
+.pdf-button:visited {
+  color: #ed76ad;
+}
+
+/* =====================================================
+   About Page
+   ===================================================== */
+
+.about-content {
+  max-width: 640px;
+}
+
+.about-content h2 {
+  font-family: Impact, "Arial Black", sans-serif;
+  color: #eabf1e;
+  font-size: 18px;
+  border-bottom: 1px solid #00854d;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+
+.about-content a {
+  color: #20b6ea;
+}
+
+.about-content a:visited {
+  color: #ed76ad;
+}
+
+.about-content p {
+  line-height: 1.6;
+  color: #d8ede2;
+}
+
+/* =====================================================
+   Utility
+   ===================================================== */
+
+.hidden {
+  display: none !important;
+}
+
+/* Visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =====================================================
+   Focus indicators
+   ===================================================== */
+
+:focus-visible {
+  outline: 3px solid #eabf1e;
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   Reduced motion
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-frame {
+    display: none;
+  }
+}
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 8px 32px;
+  }
+
+  .reel-frame {
+    padding: 6px;
+  }
+
+  .reel-divider {
+    width: 4px;
+  }
+
+  #spin-btn {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .pdf-button {
+    width: 100%;
+    text-align: center;
+  }
+}

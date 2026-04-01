@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore the Media of the 2003 1201 Triennial Rulemaking!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-IDgZcEweyxK-85jH16YL0.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+</head>
+<body>
+
+  <a href="about.html" class="about-link" title="About this site" aria-label="About this site">?</a>
+
+  <div id="page-wrap">
+    <header>
+      <h1>Explore the Media of the 2003 1201 Triennial Rulemaking!</h1>
+      <p class="tagline">In 2003, hundreds of members of the public provided specific examples of how DRM prevented them from accessing films and albums that they owned. <br><br>These are their examples.</p>
+    </header>
+
+    <main>
+
+      <!-- Result display — sr-only live region announces the selected work to screen readers -->
+      <div id="result-display" class="hidden" aria-live="polite" aria-atomic="true">
+        <p id="result-title"></p>
+        <p id="result-artist"></p>
+      </div>
+
+      <!-- Spin button -->
+      <div id="button-row">
+        <button id="spin-btn">SHOW ME A WORK</button>
+      </div>
+
+      <!-- Slot machine display (reels are decorative; aria-hidden suppresses rapid changes) -->
+      <div id="slot-machine">
+        <div class="reel-frame" aria-hidden="true">
+          <div class="reel" id="reel-1"><span class="reel-cell">&nbsp;</span></div>
+          <div class="reel-divider"></div>
+          <div class="reel" id="reel-2"><span class="reel-cell">&nbsp;</span></div>
+          <div class="reel-divider"></div>
+          <div class="reel" id="reel-3"><span class="reel-cell">&nbsp;</span></div>
+        </div>
+      </div>
+
+      <!-- YouTube embed area — hidden until first spin -->
+      <div id="video-area" class="hidden">
+        <div id="youtube-player-wrapper">
+          <div id="youtube-player"></div>
+        </div>
+        <p id="no-video-msg" class="hidden">No matching video &mdash; spin again!</p>
+      </div>
+
+      <!-- PDF link — hidden until first selection -->
+      <div id="pdf-row" class="hidden">
+        <a id="pdf-link" href="#" target="_blank" rel="noopener" class="pdf-button">
+          Read the original comment<span class="sr-only"> (opens in new tab)</span>
+        </a>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- YouTube IFrame API — must be loaded before main.js -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
