@@ -124,6 +124,10 @@ function buildFinalValues(work) {
 // =============================================================
 
 function showResult(work) {
+  // Unhide the live region before setting content so screen readers
+  // observe the content change on a visible element and fire the announcement.
+  resultDisplay.classList.remove('hidden');
+
   resultTitle.textContent = work.title;
 
   if (work.artist) {
@@ -133,8 +137,6 @@ function showResult(work) {
     resultArtist.textContent = '';
     resultArtist.classList.add('hidden');
   }
-
-  resultDisplay.classList.remove('hidden');
 }
 
 // =============================================================
@@ -167,6 +169,7 @@ function initOrLoadVideo(youtubeId) {
         rel: 0,
         modestbranding: 1,
         autoplay: 1,
+        mute: 1,
         origin: window.location.origin,
       },
       events: {
