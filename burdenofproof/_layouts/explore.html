@@ -171,16 +171,16 @@
   <div id="controls">
     <div class="controls-row" id="controls-main">
       <a class="site-back" href="{{ '/' | relative_url }}">Burden of Proof</a>
-      <select id="class-select"><option value="-1">Filter by class</option></select>
-      <select id="role-select"><option value="">Filter by role</option></select>
-      <select id="author-select"><option value="">Filter by author</option></select>
+      <select id="class-select" aria-label="Filter by class"><option value="-1">Filter by class</option></select>
+      <select id="role-select" aria-label="Filter by role"><option value="">Filter by role</option></select>
+      <select id="author-select" aria-label="Filter by author"><option value="">Filter by author</option></select>
       <span id="stats"></span>
       <button onclick="savePlot()">Save PNG</button>
     </div>
     <div class="controls-row controls-row-entities">
       <span class="controls-section-label">Labeled Entities</span>
-      <select id="person-select"><option value="">Loading...</option></select>
-      <select id="org-select"><option value="">Loading...</option></select>
+      <select id="person-select" aria-label="Filter by person"><option value="">Loading...</option></select>
+      <select id="org-select" aria-label="Filter by organization"><option value="">Loading...</option></select>
     </div>
   </div>
   <div id="canvas-container"></div>

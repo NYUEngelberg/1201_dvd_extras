@@ -1,15 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Leaderboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — §1201 Rulemaking Commenter Leaderboard — Engelberg Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    background: #f0f0f0;
+    color: #121212;
+  }
+
+  /* ── Header ── */
+  header {
+    background: #000;
+    color: #fff;
+    padding: 0 24px;
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+  }
+  .header-logo { height: 36px; flex-shrink: 0; }
+  .header-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+  }
+  .header-text h1 {
+    font-family: "EB Garamond", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .header-text p {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    margin-top: 3px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .header-back {
+    margin-left: auto;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .header-back:hover { color: #eabf1e; }
+
+  @media (max-width: 767px) {
+    .header-text h1 { font-size: 1.05rem; }
+    .header-text p { display: none; }
+    header { padding: 0 14px; }
+  }
+
+  /* ── Content ── */
+  main {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 24px 60px;
+  }
+
+  main h2 {
+    font-family: "EB Garamond", serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #57068c;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #57068c;
+  }
+
+  main h3 {
+    font-family: "EB Garamond", serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 28px 0 10px;
+    color: #121212;
+  }
+
+  main p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 14px;
+  }
+
+  main a {
+    color: #394fa1;
+    text-decoration: none;
+  }
+  main a:hover { color: #eabf1e; }
+
+  /* ── Footer ── */
+  footer {
+    background: #000;
+    color: rgba(255,255,255,0.85);
+    padding: 20px 24px;
+    font-size: 12px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  footer img { height: 28px; opacity: 0.85; }
+  footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+  footer a:hover { color: #eabf1e; }
+</style>
 </head>
 <body>
-  <h1>About</h1>
-  <p>Hello world. This is the leaderboard about page.</p>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
+
+<header>
+  <div class="header-inner">
+    <img class="header-logo" src="https://www.nyuengelberg.org/images/ec-icon-color.svg" alt="Engelberg Center">
+    <div class="header-divider"></div>
+    <div class="header-text">
+      <h1>§1201 Rulemaking — Commenter Leaderboard</h1>
+      <p>Engelberg Center on Innovation Law &amp; Policy · NYU School of Law</p>
+    </div>
+    <a class="header-back" href="index.html">← Leaderboard</a>
+  </div>
+</header>
+
+<main>
+  <h2>About This Project</h2>
+
+  <p>This leaderboard is one of three extra features released as part of the Engelberg Center's report <i><a href="https://www.nyuengelberg.org/outputs/unbalanced-interests/">Unbalanced Interests</a></i> on the 1201(a)(1) triennial rulemaking process.</p>
+
+  <h3>Methodology</h3>
+
+  <p>The ranking draws on data identifying the individuals responsible for submitting comments in the triennial process.  Some comments are submitted on behalf of multiple organizations. In such cases, the comment is counted as one comment regardless of how many organizations sign on.  In cases where comments were corrected, the original and corrected comment are only counted once.  Individuals with identical number of comments are sorted alphabetically by last name.</p>
+
+  <h3>Data</h3>
+
+  <p>The data for this leaderboard, as well as the code for the leaderboard itself, can be found in the <a href="https://github.com/NYUEngelberg/1201_dvd_extras" target="_blank">GitHub repository</a>.</p>
+
+  <h3>About the Engelberg Center</h3>
+
+  <p>The <a href="https://www.nyuengelberg.org/" target="_blank">Engelberg Center on Innovation Law &amp; Policy</a> at NYU School of Law is dedicated to research and scholarship at the intersection of law, technology, and policy.</p>
+</main>
+
+<footer>
+  <a href="https://www.nyuengelberg.org/" target="_blank">
+    <img src="https://www.nyuengelberg.org/images/ec-logo.svg" alt="Engelberg Center on Innovation Law &amp; Policy">
+  </a>
+  <span>A project of the <a href="https://www.nyuengelberg.org/" target="_blank">Engelberg Center on Innovation Law &amp; Policy</a> at NYU School of Law</span>
+</footer>
+
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-IDgZcEweyxK-85jH16YL0.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </body>
 </html>
