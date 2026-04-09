@@ -310,18 +310,22 @@
   {
     "rank": "5",
     "name": "Blake E. Reid",
-    "total_comments": 32,
+    "total_comments": 33,
     "organizations": [
       "Georgetown Law Institute for Public Representation",
       "Samuelson-Glushko Technology Law & Policy Clinic"
     ],
     "years_active": [
+      "2008",
       "2012",
       "2015",
       "2018",
       "2021"
     ],
     "filings_by_year": {
+      "2008": [
+        "https://cdn.loc.gov/copyright/1201/2008/comments/halderman-reid.pdf"
+      ],
       "2012": [
         "https://cdn.loc.gov/copyright/1201/2012/comments/reply/tdi__gallaudet.pdf"
       ],
