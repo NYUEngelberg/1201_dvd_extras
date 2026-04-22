@@ -11,6 +11,6 @@ Compiled by the [Engelberg Center on Innovation Law & Policy](https://www.nyueng
 | T-4 | Steven J. Metalitz | 48 | Smith & Metalitz, LLP, Mitchell Silberberg & Knupp LLP |
 | 6 | Blake E. Reid | 46 | Georgetown Law Institute for Public Representation, Samuelson-Glushko Technology Law & Policy Clinic |
 | 7 | Bruce H. Turnbull | 39 | Weil, Gotshal & Manges LLP, Turnbull Law Firm PLLC |
-| 8 | Kit Walsh | 32 | Electronic Frontier Foundation |
-| 9 | Mitchell Stoltz | 28 | Electronic Frontier Foundation |
+| T-8 | Kit Walsh | 32 | Electronic Frontier Foundation |
+| T-8 | Mitchell Stoltz | 32 | Electronic Frontier Foundation |
 | 10 | Corynne McSherry | 27 | Electronic Frontier Foundation |
