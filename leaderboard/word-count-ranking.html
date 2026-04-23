@@ -406,13 +406,15 @@ function fileUrl(path) {
 }
 
 (function build(data) {
-  const people = Object.entries(data.people).map(([name, info]) => ({
-    name,
-    words: info.unique_words,
-    count: info.total_comments,
-    orgs: info.organizations,
-    byYear: info.comments_by_year,
-  }));
+  const people = Object.entries(data.people)
+    .filter(([, info]) => info.total_comments > 1)
+    .map(([name, info]) => ({
+      name,
+      words: info.unique_words,
+      count: info.total_comments,
+      orgs: info.organizations,
+      byYear: info.comments_by_year,
+    }));
 
   const allYears = new Set();
   people.forEach(p => Object.keys(p.byYear).forEach(y => allYears.add(y)));
