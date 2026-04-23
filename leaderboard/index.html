@@ -57,8 +57,27 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-  .header-help {
+  .header-actions {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .header-switch {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+  .header-switch:hover { color: #eabf1e; border-color: #eabf1e; }
+  .header-help {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,7 +329,10 @@
       <h1>§1201 Rulemaking — Commenter Leaderboard</h1>
       <p>Engelberg Center on Innovation Law &amp; Policy · NYU School of Law</p>
     </div>
-    <a class="header-help" href="about.html" aria-label="About this project">?</a>
+    <div class="header-actions">
+      <a class="header-switch" href="word-count-ranking.html">Word Count Ranking →</a>
+      <a class="header-help" href="about.html" aria-label="About this project">?</a>
+    </div>
   </div>
 </header>
 
@@ -476,6 +498,20 @@ function fileUrl(path) {
   function render() {
     const yr = document.getElementById('year-filter').value;
     const mobile = isMobile();
+
+    // Compute ranks from year-filtered list before search, so search doesn't renumber
+    const yearPeople = sorted(people.filter(p => !yr || p.byYear[yr]));
+    const dispCounts = yearPeople.map(p => yr && p.byYear[yr] ? p.byYear[yr].length : p.count);
+    const yrRankNums = yearPeople.map((_, i) => i === 0 ? 1 : (dispCounts[i] === dispCounts[i-1] ? null : i + 1));
+    for (let i = 1; i < yrRankNums.length; i++) if (yrRankNums[i] === null) yrRankNums[i] = yrRankNums[i-1];
+    const yrTiedFreq = {};
+    yrRankNums.forEach(r => yrTiedFreq[r] = (yrTiedFreq[r] || 0) + 1);
+    const rankMap = {};
+    yearPeople.forEach((p, i) => {
+      const rn = yrRankNums[i];
+      rankMap[p.name] = yrTiedFreq[rn] > 1 ? 'T-' + rn : String(rn);
+    });
+
     const results = sorted(filtered(people));
     const tbody = document.getElementById('tbody');
     tbody.innerHTML = '';
@@ -483,19 +519,11 @@ function fileUrl(path) {
     document.getElementById('no-results').style.display = results.length ? 'none' : 'block';
     document.getElementById('count').textContent = results.length + ' of ' + people.length + ' people';
 
-    // Compute tied ranks
-    const dispCounts = results.map(p => yr && p.byYear[yr] ? p.byYear[yr].length : p.count);
-    const rankNums = dispCounts.map((c, i) => i === 0 ? 1 : (c === dispCounts[i-1] ? null : i + 1));
-    for (let i = 1; i < rankNums.length; i++) if (rankNums[i] === null) rankNums[i] = rankNums[i-1];
-    const tiedRank = {};
-    rankNums.forEach(r => tiedRank[r] = (tiedRank[r] || 0) + 1);
-
     results.forEach((p, i) => {
       const tr = document.createElement('tr');
 
       const tdRank = document.createElement('td');
-      const rn = rankNums[i];
-      tdRank.className = 'rank'; tdRank.textContent = tiedRank[rn] > 1 ? 'T-' + rn : rn;
+      tdRank.className = 'rank'; tdRank.textContent = rankMap[p.name] || '';
       tr.appendChild(tdRank);
 
       const tdName = document.createElement('td');

@@ -150,6 +150,14 @@
 
   <p>The ranking draws on data identifying the individuals responsible for submitting comments in the triennial process.  Some comments are submitted on behalf of multiple organizations. In such cases, the comment is counted as one comment regardless of how many organizations sign on.  In cases where comments were corrected, the original and corrected comment are only counted once.  Individuals with identical number of comments are sorted alphabetically by last name.</p>
 
+  <h3>Unique Content Ranking</h3>
+
+  <p>The <a href="word-count-ranking.html">Unique Content Ranking</a> offers an alternative view in light of the fact that the triennial process can encourage commenters to submit multiple, highly similar filings on behalf of slightly different groups of parties in response to different proposed exemptions.  This increases their ranking on the primary leaderboard.</p>
+
+  <p>To compute each person's score, filings are grouped by procedural stage (e.g., all opposition comments from the same rulemaking round). Within each group, the text of each filing is split into paragraphs and compared against paragraphs already seen in that stage. A paragraph is excluded from the count if it is at least 80% similar (by Jaccard word-set overlap) to any paragraph already counted in that stage. The person's final score is the total word count of all unique paragraphs across all stages.</p>
+
+  <p>To avoid inflating scores with content, appendices, exhibit lists, and supporter signature lists not written by the commenter, these types of appendices and additional material are excluded from the word count.</p>
+
   <h3>Data</h3>
 
   <p>The data for this leaderboard, as well as the code for the leaderboard itself, can be found in the <a href="https://github.com/NYUEngelberg/1201_dvd_extras" target="_blank">GitHub repository</a>.</p>
